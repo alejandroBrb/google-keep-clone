@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
-
+import { RButton } from '../components'
 
 class Home extends Component {
     gotoNote() {
@@ -20,11 +20,14 @@ class Home extends Component {
                 <Text>
                     Home
                 </Text>
-                <TouchableHighlight onPress={this.gotoNote}>
-                    <Text>
-                        Note
-                    </Text>
-                </TouchableHighlight>
+                <RButton
+                    style={style.button}
+                    onPress={this.gotoNote}
+                    content={
+                        <Text style={style.text}>
+                            Note
+                        </Text>}
+                    />
             </View>
         );
     }
@@ -35,6 +38,13 @@ const style = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    text: {
+        color: '#000000'
+    },
+    button: {
+        height: 60,
+        width: 100
     }
 });
 
